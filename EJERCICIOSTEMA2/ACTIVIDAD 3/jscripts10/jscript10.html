@@ -11,37 +11,43 @@
 <body>
 
   <table>
-   <tr>
-      <td colspan="4"><input type="text" id="text" name="text"></td>
+    <tr>
+      <td colspan="2"><input type="text" id="text1" placeholder="Operación" ></td>
+      <td colspan="2"><input type="text" id="result" placeholder="Resultado" ></td>
     </tr>
 
     <tr>
-      <td><button onclick="a('1')" id="1">1</button></td>
-      <td><button onclick="a('2')" id="2">2</button></td>
-      <td><button onclick="a('3')" id="3">3</button></td>
-      <td><button onclick="a('+')" id="+">+</button></td>
+      <td><button onclick="a('1')"  value="1">1</button></td>
+      <td><button onclick="a('2')"  value="2">2</button></td>
+      <td><button onclick="a('3')"  value="3">3</button></td>
+      <td><button onclick="a('+')"  value="+">+</button></td>
     </tr>
 
     <tr>
-      <td><button onclick="a('4')" id="4">4</button></td>
-      <td><button onclick="a('5')" id="5">5</button></td>
-      <td><button onclick="a('6')" id="6">6</button></td>
-      <td><button onclick="a('-')" id="-">-</button></td>
+      <td><button onclick="a('4')" value="'4'">4</button></td>
+      <td><button onclick="a('5')" value="5">5</button></td>
+      <td><button onclick="a('6')" value="6">6</button></td>
+      <td><button onclick="a('-')" value="-">-</button></td>
     </tr>
 
     <tr>
-      <td><button onclick="a('7')" id="7">7</button></td>
-      <td><button onclick="a('8')" id="8">8</button></td>
-      <td><button onclick="a('9')" id="9">9</button></td>
-      <td><button onclick="a('*')" id="*">*</button></td>
+      <td><button onclick="a('7')" value="7">7</button></td>
+      <td><button onclick="a('8')" value="8">8</button></td>
+      <td><button onclick="a('9')" value="9">9</button></td>
+      <td><button onclick="a('*')" value="*">*</button></td>
     </tr>
 
     <tr>
-      <td></td>
-      <td><button onclick="a('0')" id="0">0</button></td>
-      <td><button onclick="a('/')" id="/">/</button></td>
-      <td><button onclick="a('%')" id="%">%</button></td>
+      <td><button onclick="setNumber()" value="=">=</button></td>
+      <td><button onclick="a('0')" value="0">0</button></td>
+      <td><button onclick="a('/')" value="/">/</button></td>
+      <td><button onclick="a('%')" value="%">%</button></td>
     </tr>
+
+    <tr>
+      <td><button onclick="calc()">Calcular</button></td>
+    </tr>
+
 
     </tabla>
 </body>

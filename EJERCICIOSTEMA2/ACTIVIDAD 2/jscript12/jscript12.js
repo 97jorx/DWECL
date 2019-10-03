@@ -13,28 +13,28 @@ function calc(opt) {
 	switch (opt) {
 		case 1:
 			preguntar();
-			total = parseInt(numero1) + parseInt(numero2)
-			alert(total.isNaN ? total :"Número incorrecto");
+			total = parseInt(numero1) + parseInt(numero2);
+			alert(!isNaN(total) ? total :"Número incorrecto");
 			break;
 		case 2:
 			preguntar();
-			total = parseInt(numero1) + parseInt(numero2)
-			alert(total.isNaN ? total :"Número incorrecto");
+			total = parseInt(numero1) + parseInt(numero2);
+			alert(!isNaN(total) ? total :"Número incorrecto");
 			break;
 		case 3:
 			preguntar();
-			total = parseInt(numero1) + parseInt(numero2)
-			alert(total.isNaN ? total :"Número incorrecto");
+			total = parseInt(numero1) + parseInt(numero2);
+			alert(!isNaN() ? total :"Número incorrecto");
 			break;
 		case 4:
 			preguntar();
-			total = parseInt(numero1) + parseInt(numero2)
-			alert(total.isNaN ? total :"Número incorrecto");
+			total = parseInt(numero1) + parseInt(numero2);
+			alert(!isNaN(total) ? total :"Número incorrecto");
 			break;
 		case 5:
 			preguntar();
-			total = parseInt(numero1) + parseInt(numero2)
-			alert(total.isNaN ? total :"Número incorrecto");
+			total = parseInt(numero1) + parseInt(numero2);
+			alert(!isNaN(total) ? total :"Número incorrecto");
 			break;
 		case 6:
 			var opcion = prompt("¿Quieres cerrar la ventana? S/N: ");

@@ -38,6 +38,18 @@ function calc() {
         case '10':
             text = exponente(operando1, operando2);
             break;
+        case '11':
+            text = binario(operando1);
+            break;
+        case '12':
+            text = octal(operando1);
+            break;
+        case '13':
+            text = hexadecimal(operando1);
+            break;
+        case '14':
+            text = decimal(operando1);
+            break;
         default:
             text = "Error inesperado";
     }
@@ -81,7 +93,7 @@ function coseno(op1) {
 }
 
 function elevado(op1, op2) {
-    return (Math.pow(op1,op2));
+    return (Math.pow(op1, op2));
 }
 
 function tangente(op1) {
@@ -92,6 +104,22 @@ function exponente(op1) {
     return (Math.exp(op1));
 }
 
+
+function octal(op1) {
+    return (op1.toString(8));
+}
+
+function binario(op1) {
+    return (op1.toString(2));
+}
+
+function decimal(op1) {
+    return (op1.toString(10));
+}
+
+function hexadecimal(op1) {
+    return (op1.toString(16));
+}
 
 
 

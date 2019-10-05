@@ -10,7 +10,7 @@ function a(n) {
 }
 
 function setNumber() {
-    document.getElementById('result').value = text;
+    document.getElementById('result').value += text;
     for (i = 0; i < arr.length; i++){
         if(document.getElementById('result').value == arr[i]){
             op = text;

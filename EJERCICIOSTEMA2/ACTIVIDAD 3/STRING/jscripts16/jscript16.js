@@ -1,6 +1,6 @@
 var frase = prompt("Introduce una frase");
 var palabra = prompt("Introduce una palabra");
-
+var count = 0;
 
 var fraseArr = frase.split(' ');
 for (i = 0; i < fraseArr.length; i++) {
@@ -10,5 +10,7 @@ for (i = 0; i < fraseArr.length; i++) {
      }
 }
 
+
 frase = fraseArr.join(' ');
-document.write(frase);
+document.write(frase + " <br>");
+document.write("Longitud de la palabra" + palabra.length);

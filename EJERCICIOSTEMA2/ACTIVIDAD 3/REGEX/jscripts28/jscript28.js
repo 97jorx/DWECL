@@ -9,9 +9,12 @@ function expresion1() {
 
   for (i = 0; i < resultRegex.length; i++) {
     if (resultRegex[i].length == length) {
-        aux += resultRegex[i] + '&nbsp;';
+      aux += resultRegex[i] + '&nbsp;';
     }
+    
   }
+
+
 
   document.getElementById("p1").innerHTML = aux;
 }

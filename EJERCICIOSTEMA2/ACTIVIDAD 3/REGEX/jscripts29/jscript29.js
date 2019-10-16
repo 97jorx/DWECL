@@ -1,10 +1,14 @@
-// 28. Buscar dentro de un texto palabras con una longitud determinada. La longitud la decidirá el
+// 29.
 
 function expresion1() {
   var frase = document.getElementById("inputext").value;
-  var regex = new RegExp("<script>[^<]*<\/script>", "gim");
+  var regex = new RegExp("<script([^]*)>([^]*)<\/script>", "gim");
   var resultRegex = frase.match(regex);
   console.log(resultRegex);
-  document.getElementById("p1").innerHTML = resultRegex;
+  
+  frase = frase.replace(regex , "");
+  
+  console.log(frase);
+  document.getElementById("result").innerHTML = frase;
 }
 

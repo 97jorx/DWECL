@@ -1,13 +1,10 @@
-//Busca 3 casos de operaciones artiméticas que generen infinite y 3 casos que generen -Infinite.
-var numerosGenerados = 0;
+// 29.
 
-function getRandomInt(min, max) {
-    //return Math.floor(Math.random() * (max - min)) + min;
-    return parseInt(Math.random()*20);
-  }
+function expresion1() {
+  var frase = document.getElementById("inputext").value;
+  var regex = new RegExp("<body([^]*)>([^]*)<\/body>", "gim");
+  var resultRegex = frase.match(regex);
+  console.log(resultRegex);
+  document.getElementById("result").innerHTML = frase;
+}
 
-for (i = 0; i < 10; i++) {
-    document.write("<br>"+getRandomInt(0,20));
-  }
-
-  

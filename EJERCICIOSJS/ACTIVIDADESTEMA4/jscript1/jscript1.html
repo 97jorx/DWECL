@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba</title>
+  <script type="text/javascript" src="jscript1.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <form>
+    <fieldset>
+      <legend>Convertir de base 10 a base x</legend>
+      <p>Introduzca un número en base 10: <input type="text" value=" "  id="numero1"></p>
+      <p>Introduzca una base: <input type="text" id="base1" value=" "  placeholder="decimal, binario, octal, hexadecimal"></p>
+      <p><button type="button" onclick="convertir()">Conversion</button> <input type="text" id="btn1"></p>
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>Convertir de base X a base 10</legend>
+      <p>Introduzca un número: <input type="text" id="numero2"></p>
+      <p>Introduzca la base en la que se encuentra:
+        <select id="base2">
+          <option value="2">2</option>
+          <option value="8">8</option>
+          <option value="16">16</option>
+        </select>
+      </p>
+      <p><button type="button" onclick="convertir2()">Conversion</button> <input type="text" id="btn2" ></p>
+    </fieldset>
+  </form>
+</body>
+
+</html>

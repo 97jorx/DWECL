@@ -105,7 +105,9 @@ var print2 = function (object) {
         mostrar += ` \n ${key} -> `
         for (var prop in obj) {
             if (!obj.hasOwnProperty(prop)) continue;
-            if (isArray(obj[prop]){
+            if (Array.isArray(obj[prop])){
+                mostrar += `\n\t${prop} : ${obj[prop][0]} `;
+            } else{
                 mostrar += `\n\t${prop} : ${obj[prop]} `;
             }
         }

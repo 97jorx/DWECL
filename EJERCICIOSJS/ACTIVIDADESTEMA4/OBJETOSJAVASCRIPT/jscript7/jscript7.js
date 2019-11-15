@@ -4,18 +4,19 @@ class Empleado {
         this._dep = dep || "General";
     }
 
-    get nombre(){
+    get getNombre(){
         return this._nombre;
     }
 
-    get dep(){
-        return this._dep;
+    get geDep(){
+        return this.dep;
     }
 
 }
 
 let empleado = new Empleado('Jorge', "");
-console.log(empleado.nombre);
+console.log(empleado.getNombre);
+
 
 class Director extends Empleado {
     constructor(nombre, dep) {
@@ -23,11 +24,14 @@ class Director extends Empleado {
         this._informes = [];
     }
 
-  
+
+    
+
+
 }
 
 let director = new Director('Director', "");
-console.log(director.nombre);
+console.log(director.getNombre);
 
 
 class Trabajador extends Empleado {
@@ -36,7 +40,10 @@ class Trabajador extends Empleado {
         this._proyectos = [];
     }
    
-   
+    get getMaquina(){
+        return this._maquina;
+    }
+
 }
 
 let trabajador = new Trabajador('Trabajador', "");
@@ -51,10 +58,14 @@ class Ingeniero extends Trabajador {
 
     }
     
-    get ingieneria(){
+    get getMaquina(){
+        return this._maquina;
+    }
+
+    get getIngieneria(){
         return this._ingieneria;
     }
 }
 
 let ingeniero = new Ingeniero('Ingeniero', "1");
-console.log(ingeniero.ingieneria);
+console.log(ingeniero.getIngieneria);

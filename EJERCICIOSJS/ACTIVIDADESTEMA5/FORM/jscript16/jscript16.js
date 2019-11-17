@@ -1,7 +1,3 @@
-
-
-
-
 function Profesor(informacion) {
     this.informacion = informacion;
 }
@@ -16,7 +12,8 @@ function Alumno(nombre, mensaje, color, asignatura, disponibilidad, dia) {
 }
 
 var formSelect = function (name){ 
-    var s =  document.getElementById(`${name}`);
+    s =  document.getElementById(`${name}`);
+    selected = s.options[s.selectedIndex].text;
     return s.options[s.selectedIndex].text; 
 }
 var formRadio = function () {
@@ -26,6 +23,9 @@ var formRadio = function () {
         if (ele[i].checked)
             result = ele[i].value;
     }
+    document.body.style.backgroundColor = (result == "Verde" ) ? 'green' 
+    : (result == "Rojo" ) ?  'red' 
+    : (result == "Azul" ) ?  'blue' : " ";
     return result;
 }
 var formCheck = function (nameclass) {
@@ -46,8 +46,8 @@ function enviar() {
     return alumno = new Alumno(
         formNombre, 
         formMensaje, 
-        formSelect('asignatura'), 
         formRadio(), 
+        formSelect('asignatura'), 
         formCheck('checkbox'), 
         formSelect('dia'))
 }

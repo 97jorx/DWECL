@@ -1,11 +1,6 @@
-
-function teclado() {
-    document.addEventListener("keydown", combi);
-}
 var combinacion = "";
 var combinacion2 = "";
-function combi(e) {
-
+document.onkeydown = function(e) {
     if (e.code == "ControlLeft") {
         combinacion = "Control +  "
     } else if (e.code == "ShiftLeft") {

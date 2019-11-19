@@ -1,11 +1,3 @@
-
-
-
-
-function Profesor(informacion) {
-    this.informacion = informacion;
-}
-
 function Alumno(nombre, mensaje, color, asignatura, disponibilidad, dia) {
     this.nombre = nombre || "";
     this.mensaje = mensaje || "";
@@ -15,8 +7,11 @@ function Alumno(nombre, mensaje, color, asignatura, disponibilidad, dia) {
     this.dia = dia || "";
 }
 
+
+
 var formSelect = function (name){ 
-    var s =  document.getElementById(`${name}`);
+    s =  document.getElementById(`${name}`);
+    selected = s.options[s.selectedIndex].text;
     return s.options[s.selectedIndex].text; 
 }
 var formRadio = function () {
@@ -26,45 +21,46 @@ var formRadio = function () {
         if (ele[i].checked)
             result = ele[i].value;
     }
+    
     return result;
 }
 var formCheck = function (nameclass) {
     var arrayCheckbox = [];
-    var ele = document.getElementsByClassName(`${nameclass}`);
+    var ele = document.getElementsByClassName(nameclass);
     for (var i = 0; ele[i]; ++i) {
         if (ele[i].checked) {
             arrayCheckbox.push(ele[i].value);
         }
     }
-    return arrayCheckbox;
+    return arrayCheckbox.toString();
 }
 
 function enviar() {
     var formNombre =  document.forms["form1"]["nombre"].value;
     var formMensaje = document.forms["form1"]["area"].value;
-    
     return alumno = new Alumno(
         formNombre, 
         formMensaje, 
-        formSelect('asignatura'), 
         formRadio(), 
+        formSelect('asignatura'), 
         formCheck('checkbox'), 
         formSelect('dia'))
 }
 
 
-
-var print2 = function (object) {
+var mostrarObjeto = function (object) {
     var mostrar = "";
     for (var key in object) {
         if (!object.hasOwnProperty(key)) continue;
-        var obj = object[key];
-        mostrar += `\n\t${key} : ${obj} `;
+        //var obj = object[key];
+        mostrar += `${key} : ${object[key]}  `;
     }
     return mostrar;
 }
 
-
-function consolelog(){
-    console.log(print2(enviar()));
+function mailto(){
+    window.open("mailto:"+formSelect('asignatura')+'@iesdonana.org'+'?cc='+formSelect('asignatura')+
+    '@iesdonana.org'+'&subject=información'+'&body='+ mostrarObjeto(enviar()),'_blank');
+    console.log(mostrarObjeto(enviar()))
+    
 }

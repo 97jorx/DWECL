@@ -1,10 +1,5 @@
 
 
-function Profesor(nombre,correo) {
-    this.nombre = nombre;
-    this.correo = correo;
-}
-
 function Alumno(nombre, mensaje, color, asignatura, disponibilidad, dia) {
     this.nombre = nombre || "";
     this.mensaje = mensaje || "";
@@ -14,9 +9,10 @@ function Alumno(nombre, mensaje, color, asignatura, disponibilidad, dia) {
     this.dia = dia || "";
 }
 
-var formSelect = function (name) {
-    var s = document.getElementById(`${name}`);
-    return s.options[s.selectedIndex].text;
+var formSelect = function (name){ 
+    s =  document.getElementById(`${name}`);
+    selected = s.options[s.selectedIndex].text;
+    return s.options[s.selectedIndex].text; 
 }
 var formRadio = function () {
     var ele = document.getElementsByName("color");
@@ -25,6 +21,7 @@ var formRadio = function () {
         if (ele[i].checked)
             result = ele[i].value;
     }
+    
     return result;
 }
 var formCheck = function (nameclass) {
@@ -39,36 +36,31 @@ var formCheck = function (nameclass) {
 }
 
 function enviar() {
-    var formNombre = document.forms["form1"]["nombre"].value;
+    var formNombre =  document.forms["form1"]["nombre"].value;
     var formMensaje = document.forms["form1"]["area"].value;
-
-    return new Profesor( ("Profesor de :"+formSelect('asignatura')), new Alumno(
-        formNombre,
-        formMensaje,
-        formSelect('asignatura'),
-        formRadio(),
-        formCheck('checkbox'),
-        formSelect('dia')));
+    
+    return alumno = new Alumno(
+        formNombre, 
+        formMensaje, 
+        formRadio(), 
+        formSelect('asignatura'), 
+        formCheck('checkbox'), 
+        formSelect('dia'))
 }
 
 
 
-var print2 = function (object) {
+var mostrarObjeto = function (object) {
     var mostrar = "";
     for (var key in object) {
-        if (!object.hasOwnProperty(key));
+        if (!object.hasOwnProperty(key)) continue;
         var obj = object[key];
-        mostrar += ` \n ${key} -> `
-        for (var prop in obj) {
-            if (!obj.hasOwnProperty(prop));
-                mostrar += `\n\t${prop} : ${obj[prop]} `;
-        }
+        mostrar += `\n\t${key} : ${obj} `;
     }
     return mostrar;
 }
 
 
-
-function consolelog() {
-    console.log(print2(enviar()));
+function mailto(){
+    window.open("mailto:"+formSelect('asignatura')+'@iesdonana.org'+'?cc='+formSelect('asignatura')+'@iesdonana.org'+'&subject=información'+'&body='+mostrarObjeto(enviar()));
 }

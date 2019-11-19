@@ -23,9 +23,9 @@ var formRadio = function () {
         if (ele[i].checked)
             result = ele[i].value;
     }
-    document.body.style.backgroundColor = (result == "Verde" ) ? 'green' 
-    : (result == "Rojo" ) ?  'red' 
-    : (result == "Azul" ) ?  'blue' : " ";
+    document.body.style.backgroundColor = (result == "Verde" ) ? 'green' : 
+    (result == "Rojo" ) ?  'red' : 
+    (result == "Azul" ) ?  'blue' : "white";
     return result;
 }
 var formCheck = function (nameclass) {
@@ -65,6 +65,6 @@ var print2 = function (object) {
 }
 
 
-function consolelog(){
-    console.log(print2(enviar()));
+function mailto(){
+    window.open("mailto:"+formSelect('asignatura')+'@iesdonana.org'+'?cc='+formSelect('asignatura')+'@iesdonana.org'+'&subject=información'+'&body='+print2(enviar()));
 }

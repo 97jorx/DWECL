@@ -1,10 +1,6 @@
-
-
 function Profesor(informacion) {
     this.informacion = informacion;
 }
-
-
 
 function Alumno(nombre, mensaje, color, asignatura, disponibilidad, dia) {
     this.nombre = nombre || "";
@@ -16,7 +12,8 @@ function Alumno(nombre, mensaje, color, asignatura, disponibilidad, dia) {
 }
 
 var formSelect = function (name){ 
-    var s =  document.getElementById(`${name}`);
+    s =  document.getElementById(`${name}`);
+    selected = s.options[s.selectedIndex].text;
     return s.options[s.selectedIndex].text; 
 }
 var formRadio = function () {
@@ -26,17 +23,18 @@ var formRadio = function () {
         if (ele[i].checked)
             result = ele[i].value;
     }
+    
     return result;
 }
 var formCheck = function (nameclass) {
-    var arrayCheckbox = [];
+    var elem = "";
     var ele = document.getElementsByClassName(`${nameclass}`);
     for (var i = 0; ele[i]; ++i) {
         if (ele[i].checked) {
-            arrayCheckbox.push(ele[i].value);
+            elem = (ele[i].value);
         }
     }
-    return arrayCheckbox;
+    return elem;
 }
 
 function enviar() {
@@ -46,8 +44,8 @@ function enviar() {
     return alumno = new Alumno(
         formNombre, 
         formMensaje, 
-        formSelect('asignatura'), 
         formRadio(), 
+        formSelect('asignatura'), 
         formCheck('checkbox'), 
         formSelect('dia'))
 }
@@ -65,6 +63,6 @@ var print2 = function (object) {
 }
 
 
-function consolelog(){
-    console.log(print2(enviar()));
+function mailto(){
+    window.open("mailto:"+formSelect('asignatura')+'@iesdonana.org'+'?cc='+formSelect('asignatura')+'@iesdonana.org'+'&subject=información'+'&body='+print2(enviar()));
 }

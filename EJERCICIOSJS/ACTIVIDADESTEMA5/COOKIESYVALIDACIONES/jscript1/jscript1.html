@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="jscript1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Validaciones</legend>
+        <form action="" method="post" name="formulario">
+            <table>
+                <tr height="50">
+                    <td>DNI:</td>
+                    <td>
+                        <input id="dni" type="text" value="50.050.550-D">(Formato válido: 99.999.999-X)</input>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>Nombre:</td>
+                    <td>
+                        <input id="nombre" type="text" value = "Jorge Cadena Casado">(Introduzca al menos un nombre y un apelido. Max: 2 nombres y
+                        2apellidos)</input>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>F.Nac:</td>
+                    <td>
+                        <input id="nac" type="text" value="30/01/1997">(Formato valido: dd/mm/yyy)</input>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>E.Mail:</td>
+                    <td>
+                        <input id="mail" type="text" value="pepito@gmail.com">(xxx@yyyy.zzz)</input>
+                    </td>
+                </tr>
+                <tr height="50">
+                        <td>Pág web:</td>
+                        <td>
+                            <input id="web" type="text" value="http//www.marca.org">(Formato valido: http//www.xxxx.yyy)</input>
+                        </td>
+                    </tr>
+                <tr height="50">
+                    <td>Contraseña:</td>
+                    <td>
+                        <input id="pass" type="text" value="abcdefgh">(Debe contener 8 y 10 caracteres)</input>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>Confirmar contraseña:</td>
+                    <td>
+                        <input id="cpass" type="text" value="abcdefghij">(Debe contener 8 y 10 caracteres)</input>
+                    </td>
+                </tr>
+
+                <tr height="50">
+
+                    <td>
+                        <button id="boton" onclick="comprobar()" type="button">Guardar</button>
+                    </td>
+                    <td>
+                        <button id="boton2" type="">Ver</button>
+                    </td>
+                </tr>
+
+
+
+            </table>
+        </form>
+    </fieldset>
+</body>
+
+</html>

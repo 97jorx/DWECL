@@ -5,13 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="jscript10.js" defer async></script>
+    <script src="jscript10.js" defer async></script>
     <title>Document</title>
 </head>
 
+<style>
+    #img {
+        width: 100px;
+        height: 100px;
+        border-style: solid;
+        border-width: 1px;
+    
+}
+</style>
+
 <body >
-    <p id="p1"></p>
-    <p id="p2"></p>
+    <img id="img" src=""  onload="cargarimagen()" onabort="abortar()" alt="No se ha encontrado el recurso">
+    <p id="p"></p>
+    <button id="cargar" >Cargar</button>
+    <button id="parar" >Parar</button>
+
+    
 </body>
 
 </html>

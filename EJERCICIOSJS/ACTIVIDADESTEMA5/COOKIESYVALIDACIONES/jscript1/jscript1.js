@@ -32,3 +32,5 @@ function comprobar() {
 function ver(){
     alert(datos.toString());
 }
+
+

@@ -3,14 +3,115 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta class="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="jscript3.js" defer async></script>
     <title>Document</title>
 </head>
+<style>
+    input:required {
+        box-shadow: none;
+    }
+
+    input:invalid {
+        box-shadow: none;
+    }
+</style>
 
 <body>
-  
+    <fieldset>
+        <legend>Validaciones</legend>
+        <form action="" method="post" class="formulario">
+            <table>
+                <tr height="50">
+                    <td>DNI:</td>
+                    <td>
+                        <input id="dni" class="dni" type="text" value=""
+                            pattern="[0-9]{2}.[0-9]{3}.[0-9]{3}-[^ñiouÑIOU]{1}$" onchange="validar(this);"
+                            required>(Formato válido:99.999.999-X)</input>
+                        <p id="errordni" class="dni"  hidden>Error: válido:99.999.999-X</p>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>Nombre:</td>
+                    <td>
+                        <input id="nombre" class="nombre" type="text" value="" onchange="validar(this);"
+                            pattern="^[a-zA-Z]+[ ][a-zA-Z]+([ ][a-zA-Z]+){0,2}$" required>(Introduzca al menos un nombre
+                        y un apellido.
+                        Max: 2 nombres
+                        2apellidos)</input>
+                        <p id="errornombre" class="nombre" hidden>Error: Introduzca al menos un nombre y un apellido</p>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>F.Nac:</td>
+                    <td>
+                        <input id="Nacimiento" class="nac" type="date" value="30/01/1997"
+                            pattern="^([0-2][0-9]|(3)[0-1])(/)(((0)[0-9])|((1)[0-2]))(/)\d{4}$"
+                            onchange="validar(this);">(Formato valido: dd/mm/yyy)</input>
+                        <p id="errornac" class="nac" value="Error: valido: dd/mm/yyyy " hidden>Error: valido: dd/mm/yyyy</p>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>E.Mail:</td>
+                    <td>
+                        <input id="Mail" type="text" class="email" value="pepito@gmail.com"
+                            pattern="^[a-zA-Z]*@[a-zA-Z]{5}.[a-zA-Z]{3}" onchange="validar(this);" required>(Formato
+                        válido :xxx@yyyy.zzz)</input>
+                        <p id="errormail" class="email" value="" hidden>Error: válido :xxx@yyyy.zzz</p>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>Pág web:</td>
+                    <td>
+                        <input id="Web" type="text" class="web" value="http//www.marca.org"
+                            pattern="^http//+[w]{3}.+[a-z0-9]+.[a-z]{2,3}$" onchange="validar(this);">(Formato valido:
+                        http//www.xxxx.yyy)</input>
+                        <p id="errorweb" class="web" value=" " hidden>Error: valido: http//www.xxxx.yyy</p>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>Contraseña:</td>
+                    <td>
+                        <input id="Contraseña" class="pass" type="password" value="12345678" pattern="[a-zA-Z-0-9]{8,10}"
+                            onchange="validar(this);">(Debe contener 8
+                        y 10 caracteres)</input>
+                        <p id="errorpass" class="pass" value="" hidden>Error: 8 y 10 caracteres</p>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>Confirmar contraseña:</td>
+                    <td>
+                        <input id="Confirmar contraseña" class="cpass" type="password" value="12345678"
+                            pattern="[a-zA-Z-0-9]{8,10}" onchange="validar(this);" required>(Debe contener 8 y 10
+                        caracteres)</input>
+                        <p id="errorpassconfirm" class="cpass" value=" " hidden>Error: 8 y 10 caracteres</p>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td>Numero de hijos:</td>
+                    <td>
+                        <input id="Numero de hijos" class="nhijos" type="number" value="5" min="0" max="10"
+                            pattern="[0-9]|10$" onchange="validar(this);">(Entre 0 y 10 hijos)</input>
+                        <p id="errornumhijos" class="nhijos" value=" " hidden>Error: Entre 0 y 10 hijos</p>
+                    </td>
+                </tr>
+
+                <tr height="50">
+
+                    <td>
+                        <button id="boton" type="button">Guardar</button>
+                    </td>
+                    <td>
+                        <button id="boton2" type="">Ver</button>
+                    </td>
+                </tr>
+
+
+
+            </table>
+        </form>
+    </fieldset>
 </body>
 
 </html>

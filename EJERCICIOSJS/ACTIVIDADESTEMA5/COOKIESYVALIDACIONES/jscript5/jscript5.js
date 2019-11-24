@@ -1,24 +1,37 @@
- 
-document.onkeypress = function(e){
-    document.getElementById("DIV").style.backgroundColor = "#CCE6FF"
-    document.getElementById("p2").innerHTML =
-    "Caracter X: " + e.key;
-    console.log("KEY")
+
+function setCookie(name, value, expires, path, domain, secure) {
+    document.cookie = name + "=" + encodeURIComponent(value) +
+    ((expires == null) ? "" : "; expires=" + expires.toUTCString()) +
+    ((path == null) ? "" : "; path=" + path) +
+    ((domain == null) ? "" : "; domain=" + domain) +
+    ((secure == null) ? "" : "; secure");
 }
 
-document.onmousedown = function(){
-    if (event.button != -1){
-    document.getElementById("DIV").style.backgroundColor = "#FFFF00"
-    console.log("MOUSE")
+function getCookie(nombreCookie) {
+    var nombre = nombreCookie + "=";
+    var cookieArray = document.cookie.split(';');
+    for (var i = 0; i < cookieArray.length; i++) {
+        var parteCookie = cookieArray[i];
+        while (parteCookie.charAt(0) == ' ') {
+            parteCookie = parteCookie.substring(1);
+        }
+        if (parteCookie.indexOf(nombre) == 0) {
+            return parteCookie.substring(nombre.length, parteCookie.length);
+        }
     }
+    return "";
 }
 
-document.body.onmouseenter = function(){
-    document.getElementById("DIV").style.backgroundColor = "#FFFFFF"
-    console.log("MOUSEenter")
+window.onload = () => {
+    var valor = getCookie("contador");
+    if (valor === null) {
+        setCookie('contador', 1);
+    } else {
+        setCookie('contador', valor++);
+    }
+    alert("Contador "+ valor);
 }
 
-document.onclick = function(e){
-    document.getElementById("p").innerHTML =
-    "Coordenada X: " + e.clientX + "Coordenada Y: " + e.clientY;
-  }
+function mostrarCookie(){
+    document.getElementById("p").innerHTML = getCookie("contador");
+}

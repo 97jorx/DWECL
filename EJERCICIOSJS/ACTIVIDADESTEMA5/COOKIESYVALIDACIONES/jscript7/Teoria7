@@ -1,0 +1,53 @@
+7. Realice un estudio de cuáles pueden ser los problemas que generan las cookies en una
+aplicación web. Busque en Internet qué alternativas existen para abordar la
+funcionalidad de los cookies. Concluya si la tendencia es utilizar las cookies o si son otras
+tecnologías las que se están tendiendo a utilizar. 
+
+
+
+1. Cada empresa tiene que crear sus propias cookies para identificar a sus usuarios.
+Esto ha tenido dos consecuencias. Por un lado, cada internauta está identificado en la red por miles de códigos,
+cada uno reconocible solo por un servidor.Por otro, ha generado un mercado de compraventa de datos personales y 
+compañías que usan cookies de terceros para seguir a los usuarios a través de múltiples sitios web.
+
+En consecuencia, el sistema que permitió el desarrollo de internet tal como la conocemos hoy se ha saturado 
+y se ha convertido en un lugar poco transparente en términos de privacidad y seguridad.
+
+Otros problemas, como la identificación inexacta de usuarios y, sobre todo, de aquellos que usan varias cuentas y dispositivos,
+vulnerabilidades que permiten el robo de datos y vulnerabilidades que permiten falsificarlas para alterar la información de los usuarios. 
+
+
+
+ALTERNATIVAS
+
+Sistemas de logueo
+
+Las altenativas pasan por los sistemas de social login. Es lo que hace Facebook con su Single
+Sign-On, que no es más que el social login que permite que sus usuarios accedan a otros
+servicios y webs en internet usando su identidad en Facebook. Los consumidores lo hacen
+porque resulta más sencillo para ellos: solo tienen que importar, por así decirlo, su cuenta y ya
+no tienen que memorizar nuevos nombres de usuario y nuevas contraseñas.
+
+
+ADID
+
+La propuesta de Google no es tan drástica, porque la compañía está desarrollando
+su propio AdID como una herramienta de seguimiento alternativa para los anunciantes.
+
+Sin embargo, la nueva herramienta brindará a los usuarios la capacidad de limitar
+el seguimiento de anuncios a través de la configuración del navegador, de acuerdo
+con la persona familiarizada con el plan. 
+
+El AdID puede restablecerse automáticamente por el navegador cada año, y los usuarios podrán crear un AdID 
+secundario para las sesiones de navegación en línea que quieran mantener particularmente privadas, explicó la persona.
+
+Los anunciantes tendrán acceso a estos AdID, siempre que cumplan con los términos del programa. Sin embargo, los usuarios pueden 
+cambiar la lista de anunciantes aprobados, a través de controles en el navegador, para excluir empresas específicas, agregó la persona.
+
+
+
+
+CONCLUSION
+
+Las cookies tienen ya muchos años, y debido al uso indebido que puede ocasionar a la privacidad
+lo mas recomendable es buscar una alternativa mas eficiente a la seguridad de los usuarios.

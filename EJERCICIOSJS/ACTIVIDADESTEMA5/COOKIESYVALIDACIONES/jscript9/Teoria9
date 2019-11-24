@@ -1,0 +1,16 @@
+9. ¿Por qué últimamente todas las web nos piden permiso para utilizar cookies? 
+
+
+Muchas web la primera vez que accedemos nos piden cierta información o nos dan
+opción a configurar determinados parámetros que en las siguientes visitas ya nos
+piden. Pues bien, esa información ¿donde se guarda?, efectivamente en una cookie
+(asociada a la web), de ese modo, en siguientes visitas, lo primero que hace la web es
+consultar si esa información está guardada. Si es así no vuelve a pedírnosla.
+
+
+Esto evidentemente facilita la navegación y es fundamental en muchos sitios. Como
+eso se guarda con el navegador abierto, en las opciones de configuración de nuestro
+navegador hay determinados parámetros que podemos configurar para conseguir que
+se guarden como y donde queramos e incluso evitar que no se guarde ninguna cookie.
+Todos nos hemos encontrado sitios que nos avisan que para funcionar deben estar las
+cookies activadas.

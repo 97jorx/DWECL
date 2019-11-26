@@ -28,7 +28,7 @@ function recogerCookies() {
      var inputs = document.getElementsByTagName('input');
      for (i = 0; i < inputs.length; i++) {
           if (inputs[i].checkValidity() !== false) {
-               setCookie(inputs[i].id, inputs[i].value)
+               setCookie(inputs[i].id, inputs[i].value, 365)
           }
      }
 }
@@ -43,6 +43,3 @@ function mostrarCookie() {
      alert(mostrar);
 }
 
-function ver() {
-     alert(datos.toString());
-}

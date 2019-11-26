@@ -1,11 +1,14 @@
-function setCookie(nombre, valor, dias) {
+function setCookie(nombre, valor, dias, ruta, dominio, secure) {
     if (dias) {
         var fecha = new Date();
         fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000));
         var caducidad = "; expira=" + fecha.toGMTString();
     }
     else var caducidad = "";
-    document.cookie = nombre + "=" + valor + caducidad + "; path=/";
+    document.cookie = nombre + "=" + valor + caducidad + "; ruta=/" + 
+    ((ruta == null) ? "" : "; ruta=" + ruta) +
+    ((dominio == null) ? "" : "; dominio=" + dominio) +
+    ((secure == null) ? "" : "; secure");;
 }
 
 function getCookie(nombreCookie) {

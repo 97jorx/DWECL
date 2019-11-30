@@ -38,7 +38,7 @@ function mostrarCookie() {
      var mostrar = "";
      var inputs = document.getElementsByTagName('input');
      for (let i = 0; i < inputs.length; i++) {
-          mostrar += `${getCookie(inputs[i].id)} : ${getCookie(inputs[i].value)}`
+          mostrar += `${inputs[i].id} --> ${getCookie(inputs[i].id)} \n`
      }
      alert(mostrar);
 }

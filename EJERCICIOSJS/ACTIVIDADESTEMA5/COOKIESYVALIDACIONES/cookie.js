@@ -5,7 +5,7 @@ function setCookie(nombre, valor, dias, ruta, dominio, secure) {
         var caducidad = "; expira=" + fecha.toGMTString();
     }
     else var caducidad = "";
-    document.cookie = nombre + "=" + valor + caducidad + "; ruta=/" + 
+    document.cookie = nombre + "=" + valor + ';' + caducidad + "; ruta=/" + 
     ((ruta == null) ? "" : "; ruta=" + ruta) +
     ((dominio == null) ? "" : "; dominio=" + dominio) +
     ((secure == null) ? "" : "; secure");;
@@ -25,6 +25,5 @@ function getCookie(nombreCookie) {
     }
     return "";
 }
-
 
 

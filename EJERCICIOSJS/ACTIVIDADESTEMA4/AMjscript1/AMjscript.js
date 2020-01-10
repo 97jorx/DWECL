@@ -1,10 +1,7 @@
 var paises =
-    [['España', 'Madrid',
-        ['Paella', 'Cocido', 'Salmorejo']],
-    ['Francia', 'París',
-        ['Fondue de queso', 'Crepes', 'Croissants']],
-    ['Italia', 'Roma',
-        ['Pasta', 'Pizzas', 'Helados']]];
+    [['España', 'Madrid', ['Paella', 'Cocido', 'Salmorejo']],
+    ['Francia', 'París', ['Fondue de queso', 'Crepes', 'Croissants']],
+    ['Italia', 'Roma', ['Pasta', 'Pizzas', 'Helados']]];
 
 
 function arrayalista() {

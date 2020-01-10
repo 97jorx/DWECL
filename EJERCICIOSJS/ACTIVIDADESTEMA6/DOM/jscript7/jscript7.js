@@ -1,4 +1,4 @@
-var etiquetas = ['button'],
+var etiquetas = ['button','input'],
   netiquetas = ['Dimensión', 'Crear tabla', 'Añadir fila', 'Borrar fila'],
   body = document.body,
   td = document.getElementsByTagName('td'),
@@ -14,11 +14,19 @@ for (let i = 0; i < 4; i++) {
   botones.appendChild(nombreBtn);
 }
 
+// INPUT COLOR
+color = document.createElement(etiquetas[1]);
+color.setAttribute('id', "color");
+color.setAttribute('type', "color");
+body.appendChild(color);
+
+
 // PREGUNTAR FILA Y COLUMNA
+document.getElementById('btn1').addEventListener('click',  
+dimension = () => { fila = prompt("Introduce las filas");
+col = prompt("Introduce las columnas")})
 document.addEventListener('load', dimension())
-document.getElementById('btn1').addEventListener('click', dimension)
- function dimension() { fila = prompt("Introduce las filas");
-                        col = prompt("Introduce las columnas")};
+ 
 
 
 // CREAR TABLA
@@ -63,6 +71,21 @@ document.getElementById("btn4").onclick = () => {
     document.getElementById("table").deleteRow(-1);
   }
 }
+
+
+// CAMBIAR COLOR
+var input = document.getElementById("color");
+input.addEventListener("input", function() {
+  var color = input.value;
+  console.log(color)
+  if (!document.getElementById('table')) {
+    alert("NO hay una tabla creada");
+  } else {
+    document.getElementById("table").setAttribute("bgcolor", input.value)
+  }
+
+});
+
 
 
 // FUNCION QUE AGREGA INPUTS DENTRO DE LOS TD

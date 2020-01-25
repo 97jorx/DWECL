@@ -10,6 +10,9 @@ ul {
     color: white;
   }
   
+  .subseccion{
+    display: none;
+  }
 
   li {
     float: left;

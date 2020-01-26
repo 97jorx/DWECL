@@ -1,14 +1,4 @@
 jQuery.fn.desplegable = function (metodo) {
-    $('.listali').on({
-        mouseout: function () {
-          $('div', this).slideUp(3000);
-        },
-        mouseenter: function () {
-          $('div', this).fadeIn('fast');
-          
-        }
-      });
-    
     if (methods[metodo]) {
         return methods[metodo].apply(this, Array.prototype.slice.call(arguments, 1));
     } else if (typeof metodo === 'object' || !metodo) {
@@ -20,7 +10,7 @@ jQuery.fn.desplegable = function (metodo) {
 };
 
 var methods = {
-    empezar: function (n, padre) {
+    empezar: function (n, padre, nMenu = '') {
         p = $(`#${padre}`);
         listau = $('<ul/>').addClass('listaul')
             .attr('id', `ulId1`).appendTo(p);
@@ -29,22 +19,22 @@ var methods = {
             li = $('<li/>').addClass('listali')
                 .attr('id', `liId${i + 1}`).appendTo(listau);
             a = $('<a/>').addClass('enlacea')
-                .attr('id', `aId${i + 1}`)
+                .attr('id', `seccionId${i + 1}`)
                 .text(`Seccion${i + 1}`).appendTo(li);
-            div = $('<div/>').addClass('subseccion')
-                .attr('id', `subseccionId${i + 1}`).appendTo(li);
-            a2 = $('<a/>').addClass('enlacea')
-                .attr('id', `aId${i + 1}`).text(`Enlace${i + 1}`)
-                .appendTo(div);
+            div = $('<div/>').addClass('subsec')
+                .attr('id', `subsecId${i + 1}`).appendTo(li);
             i++;
         }
+        $('.listali').hover(
+            function () { $(this).children('div').fadeIn(200); },
+            function () { $(this).children('div').fadeOut(200); });
     },
-    agregarSubseccion: function (sub, enlaceid, nombre) {
+    agregarSubseccion: function (idsub, enlaceid, nombre) {
         if ($(`#${enlaceid}`).length) {
-            console.error(`Error: el ID del ${parrafo} ya existe`);
+            console.error(`Error: el ID del ${enlaceid} ya existe`);
         } else {
             a2 = $('<a/>').addClass('enlacea').attr('id', `${enlaceid}`)
-                .text(`${nombre}`).appendTo(`#${sub}`);
+                .text(`${nombre}`).appendTo(`#${idsub}`);
         }
     },
     agregarSeccion: function (nombre, idli, ida, iddiv) {
@@ -65,7 +55,6 @@ var methods = {
             $(`#${id}`).remove()
         }
     },
-
     eliminarRecursivo: function (id) {
         if (!$(`#${id}`).length) {
             console.error(`Error: el ID del ${id} no existe`);
@@ -73,7 +62,13 @@ var methods = {
             $(`#${id}`).empty()
         }
     },
-
+    cambiarNombre: function (id, nombre) {
+        if (!$(`#${id}`).length) {
+            console.error(`Error: el ID del ${id} no existe`);
+        } else {
+            $(`#${id}`).text(`${nombre}`);
+        }
+    },
 };
 
 

@@ -47,47 +47,89 @@ b {
 
 ## Como crear el menu
 
-Una vez teniendo ya el archivo.js listo para empezar podemos crear ya el menu, debemos **llamar al desplegable con $() o la etiqueta que hemos creado previamente que será el padre del menu desplegable**, al invocar **desplegable()** y pasarle como parámetros **'empezar'** como primer parametro el segundo parámetro el número de secciones que queramos y el ID del padre como tercer parametro tendremos el menu por defecto(el primer elemento del menu es una etiqueta ul):
+Una vez teniendo ya el archivo.js listo para empezar podemos crear ya el menu, debemos **llamar al desplegable con el id a la etiqueta que hemos creado previamente que será el padre del menu desplegable**, al invocar **desplegable()** y pasarle como parámetros **'empezar'** como primer parametro el segundo parámetro el número de secciones que queramos y el ID del padre como tercer parametro tendremos el menu por defecto(el primer elemento del menu es una etiqueta ul):
 <div style="page-break-after: always;"></div>
 
 ```JavaScript
-/**
- * Crea el menu desplegable por defecto.
- * @param {string} - Empieza el desplegable con el el menu por defecto.
- * @param {int} - Numero de elementos a crear por defecto.
- * @param {string} - El id del padre donde empezará el menu.
- */
-$('#padre').desplegable('empezar','5','padre');
+
+  Crea el menu desplegable por defecto.
+  @param {string} - Empieza el desplegable con el el menu por defecto.
+  @param {int} - Numero de elementos a crear por defecto.
+  @param {id} - Pasarle el id de la etiqueta donde va a colgar el menu.
+ 
+$('#padre').desplegable('empezar','5');
 
 ```
-
-**o bien podemos hacer esto:**
-
-```JavaScript
-
-$().desplegable('empezar','5','padre');
-
-```
-
 
 ## Otros metodos
 
-Una sección se compone de una lista , un enlace y un caja(div) que seran hijos de la
-ul(padre).
+
 
 ```JavaScript
-/**
- * Agrega una seccion a debajo de cualquier elemento HTML.
- * @param {string} - Crea una seccion.
- * @param {string} - Nombre de la seccion que le queramos dar.
- * @param {string} - El id de la lista que le queramos dar.
- * @param {string} - El id del enlace que le queramos dar.
- * @param {string} - El id del div que le queramos dar.
- */
-$('#padre').desplegable('agregarSeccion','nombreseccion', 'idlista','idenlace','iddiv');
+
+- Una sección se compone de una lista , un enlace y un caja(div) que seran hijos de la
+  ul(padre).
+
+  Agrega una seccion a debajo de cualquier elemento HTML.
+  @param {string} - Crea una seccion.
+  @param {string} - Nombre de la seccion que le queramos dar.
+  @param {string} - El id de la lista que le queramos dar.
+  @param {string} - El id del enlace que le queramos dar.
+  @param {string} - El id del div que le queramos dar.
+ 
+$().desplegable('agregarSeccion','nombreseccion', 'idlista','idenlace','iddiv');
 
 
 ```
+
+```JavaScript
+
+  Agrega una seccion a debajo de cualquier elemento HTML.
+  @param {string} - Método de agregarSubseccion.
+  @param {string} - Nombre del elemento donde va a aparecer la subseccion.
+  @param {string} - El id del enlace que le queramos dar.
+  @param {string} - Nombre del enlace que le queramos dar.
+ 
+$().desplegable('agregarSubseccion','subsecId21','TipoA',"Tipo A");
+
+
+```
+<div style="page-break-after: always;"></div>
+
+```JavaScript
+
+  Elimina una sola etiqueta por el id.
+  @param {string} - Método eliminar.
+  @param {string} - Nombre de la seccion que le queramos dar.
+ 
+$().desplegable('eliminarElemento','id');
+
+
+```
+
+```JavaScript
+
+  Elimina todas las etiquetas que esten por debajo del id especificado.
+  @param {string} - Método eliminar recursivo.
+  @param {string} - Nombre de la seccion que le queramos dar.
+ 
+$().desplegable('eliminarRecursivo','id');
+
+
+```
+
+## A tener en cuenta...
+
+Si se utiliza el método 'empezar' y 'agregarSeccion' de este plugin para crear 
+otros desplegables hay que tener en cuenta que cada menu tendrá 
+un numero identificativo al final en el ID de cada elemento generado.
+Esta pensado para que los ID de ningún elemento se repita al generarlo
+por defecto.
+
+Por ejemplo:
+Si creas el primer menú desplegable el ID correspondiente al enlace,
+a la lista y al div, será el siguiente : subsecId11 , liId11, subsecId11.
+por lo tanto el siguiente menú creado tendrá el último numero incrementado en uno.
 
 
 

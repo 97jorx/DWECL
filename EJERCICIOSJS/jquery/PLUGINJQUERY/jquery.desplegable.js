@@ -14,46 +14,57 @@ jQuery.fn.desplegable = function (metodo) {
 var methods = {
     empezar: function (n) {
         p = $(`#${$(this).attr('id')}`);
-        listau = $('<ul/>').addClass('listaul')
-            .attr('id', `ulId1`).appendTo(p);
-            console.log(this);
         menu2 = lvl++;
+        if (!p.length) {
+            $.error(`Error: no se le ha pasado un id como padre`);
+        }
+        listau = $('<ul/>').addClass(`listaul${lvl}`)
+            .attr('id', `ulId${lvl}`).appendTo(p);
+
         if (!($.isNumeric(`${n}`))) {
             $.error(`Error: el número de secciones a crear es inválido`);
         } else {
             i = 0;
             while (n > i) {
-                li = $('<li/>').addClass('listali')
+                li = $('<li/>').addClass(`listali${lvl}`)
                     .attr('id', `liId${i + 1}${lvl}`).appendTo(listau);
-                a = $('<a/>').addClass('enlacea')
+
+                a = $('<a/>').addClass(`enlacea${lvl}`)
                     .attr('id', `seccionId${i + 1}${lvl}`)
                     .text(`Seccion${i + 1}`).appendTo(li);
-                div = $('<div/>').addClass('subsec')
+
+                div = $('<div/>').addClass(`subsec${lvl}`)
                     .attr('id', `subsecId${i + 1}${lvl}`).appendTo(li);
                 i++;
             }
-            $('.listali > div').hide();
-            $('.listali').hover(
-                function () { $(this).children('div').fadeIn(200); },
-                function () { $(this).children('div').fadeOut(200); });     
+
+            $(`li > div`).hide();
+            $("li").each(function () {
+                $(this).hover(
+                    function () { $(this).children('div').fadeIn(500); },
+                    function () { $(this).children('div').fadeOut(500); });
+            });
+
         }
     },
     agregarSubseccion: function (idsub, enlaceid, nombre) {
         if ($(`#${enlaceid}`).length) {
             $.error(`Error: el ID del ${enlaceid} ya existe`);
         } else {
-            a2 = $('<a/>').addClass('enlacea').attr('id', `${enlaceid}`)
+            a2 = $('<a/>').addClass(`enlacea${lvl}`).attr('id', `${enlaceid}`)
                 .text(`${nombre}`).appendTo(`#${idsub}`);
         }
     },
     agregarSeccion: function (nombre, idli, ida, iddiv) {
-        listau = $(`#ulId1`);
-        li = $('<li/>').addClass('listali')
+        listau = $(`#ulId${lvl}`);
+        li = $('<li/>').addClass(`listali${lvl}`)
             .attr('id', `${idli}${lvl}`).appendTo(listau);
-        a2 = $('<a/>').addClass('enlacea')
+
+        a2 = $('<a/>').addClass(`enlacea${lvl}`)
             .attr('id', `${ida}${lvl}`)
             .text(`${nombre}`).appendTo(li);
-        div = $('<div/>').addClass('subseccion')
+
+        div = $('<div/>').addClass(`subsec${lvl}`)
             .attr('id', `${iddiv}${lvl}`).appendTo(li);
     },
 

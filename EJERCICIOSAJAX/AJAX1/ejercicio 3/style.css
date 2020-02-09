@@ -1,0 +1,59 @@
+:root {
+    --white: #afafaf;
+    --red: #e31b23;
+    --bodyColor: #292a2b;
+    --borderFormEls: hsl(0, 0%, 10%);
+    --bgFormEls: hsl(0, 0%, 14%);
+    --bgFormElsFocus: hsl(0, 7%, 20%);
+  }
+   
+* { 
+    box-sizing: border-box;
+}
+
+div{
+    background-color: #555;
+    padding: 35%;
+    box-sizing: border-box var(--bgFormElsFocus)var(--bgFormElsFocus);
+    width: 200%;
+    box-shadow: 5px 5px 10px black;
+}
+
+form {
+     color: white;
+     position: absolute;
+     left: 25%;
+     padding-top: 6em;
+     box-sizing: border-box var(--bgFormElsFocus) var(--bgFormEls);
+ }
+
+  input,
+  button {
+    font-family: inherit;
+    font-size: 100%; 
+    padding-top: 10%;
+    box-shadow: 5px 5px 10px #292a2b;
+  }
+   
+  button,
+  label {
+    cursor: pointer;
+  }
+   
+  
+ 
+
+.my-form input,
+.my-form button {
+  
+  line-height: 1.5;
+  padding: 15px 20px;
+  
+  width: 100%;
+  border: 1px solid var(--borderFormEls);
+  color: var(--white);
+  background: var(--bgFormEls);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+    transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+ 

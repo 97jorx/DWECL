@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="jscript2.js"></script>
+  
+</head>
+<style>
+  form label,
+  form input {
+    margin-bottom: 3px;
+    display: block;
+    width: 10%;
+  }
+
+  .error {
+    color: red;
+  }
+</style>
+
+<body>
+
+  <form action="" method="POST" id="formulario" class="my-form" name="formulario">
+    <div>
+      <h2>Formulario IES Doñana</h2>
+      <label for="fnac">Nombre</label>
+      <input type="date" name="fnac" id="fnac" placeholder="xx/xx/xx" required>
+
+      <label for="cpostal">Código postal</label>
+      <input type="text" name="cpostal" id="cpostal" placeholder="XXXXX" />
+     
+      <label for="telefono">Teléfono</label>
+      <input type="text" name="telefono" id="telefono" placeholder="XXX-XXXXXX" required />
+
+      <!-- <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="xxx@xxxx.xx" required /> -->
+
+      <button type="submit" id="boton">Enviar</button>
+    
+    </div>
+  </form>
+  <p class="mensaje"></p>
+</body>
+
+</html>

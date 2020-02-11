@@ -8,7 +8,7 @@ $(document).ready(function () {
         success: function (data) {
             $.each(data, function (clave, valor) {
                 $(`<option value="${clave}">${valor}</option>`)
-                    .appendTo('#provincia');
+                .appendTo('#provincia').attr('value', ordenar());
             });
         }
     });
@@ -22,16 +22,23 @@ $(document).ready(function () {
             data: { provincia: proval },
         }).done(function (data) {
             var jsonData = $.parseJSON(data);
-            $('#municipio').children().remove();
-             $.each(jsonData, function (clave, valor) {
-                 $(`<option value="${clave}">${valor}</option>`)
-                     .appendTo('#municipio');
-             });
+            $('#municipio').empty();
+            $.each(jsonData, function (clave, valor) {
+                $(`<option value="${clave}">${valor}</option>`)
+                    .appendTo('#municipio').attr('value', ordenar());
+            });
         });
     });
+    ordenar();
 });
 
-
-
-
-
+function ordenar(){
+    $("select").each(function(index,elem) {    
+        var listaActual = elem;
+        var sel = listaActual.selectedIndex;
+        $(listaActual).html($("option", $(this)).sort(function(a, b) {
+              return a.value == b.value ? 0 : a.value < b.value ? -1 : 1;
+        }));
+        $(listaActual).prop('selectedIndex', sel); 
+    });
+}

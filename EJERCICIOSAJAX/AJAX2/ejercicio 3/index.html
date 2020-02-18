@@ -1,18 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="jscript3.js"></script>
 </head>
-<body>
-	<button class="update-available-flights">Ver vuelos</button>
-	<div class="flights">
-	  <ul class="flight-times">
+<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 30%;
+		margin: 20px;
+		box-shadow: 1px 1px 5px 2px #555;
+	}
 
-	  </ul>
+	td,
+	th {
+
+		text-align: left;
+		padding: 8px;
+	}
+
+	th {
+		background-color: crimson;
+	}
+
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+</style>
+
+<body>
+	<button id="boton">Ver cursos</button>
+	<input type="text" name="inputCurso" id="inputCurso">
+	<div id="padre">
 	</div>
-	
 </body>
+
 </html>

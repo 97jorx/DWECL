@@ -6,7 +6,9 @@ $(document).ready(function () {
             type: "POST",
             url: "servidor.php",
             data: data,
-            success: function (data) {         
+            success: function (data) {  
+                $('#1daw').children().remove();
+                $('#2daw').children().remove();
                 $.each(data, function (i) {
                     $('#1daw').append(`<li>
                         ${data[i][0].nombre}\t

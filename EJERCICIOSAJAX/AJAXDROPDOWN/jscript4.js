@@ -29,7 +29,6 @@ $(document).ready(function () {
             });
         });
     });
-    ordenar();
 });
 
 function ordenar(){

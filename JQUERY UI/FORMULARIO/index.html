@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!-- <link href="jquery-ui.css" rel="stylesheet"> -->
+	<script src="external/jquery/jquery.js"></script>
+	<script src="jquery-ui.js"></script>
+	<link href="jquery-ui.css" rel="stylesheet">
+	<script src="index.js" defer></script>
+	<style type="text/css">
+		body {
+			font-family: "Trebuchet MS", sans-serif;
+			margin: 50px;
+		}
+
+		#vslider {
+			margin: auto;
+
+
+		}
+
+		.demoHeaders {
+			margin-top: 2em;
+		}
+
+		#dialog-link {
+			padding: .4em 1em .4em 20px;
+			text-decoration: none;
+			position: relative;
+		}
+
+		#dialog-link span.ui-icon {
+			margin: 0 5px 0 0;
+			position: absolute;
+			left: .2em;
+			top: 50%;
+			margin-top: -8px;
+		}
+
+		#icons {
+			margin: 0;
+			padding: 0;
+		}
+
+		#icons li {
+			margin: 2px;
+			position: relative;
+			padding: 4px 0;
+			cursor: pointer;
+			float: left;
+			list-style: none;
+		}
+
+		#icons span.ui-icon {
+			float: left;
+			margin: 0 4px;
+		}
+
+		.fakewindowcontain .ui-widget-overlay {
+			position: absolute;
+		}
+
+		#mensaje {
+			display: none;
+		}
+
+		
+		
+		select {
+			width: 200px;
+		}
+	</style>
+
+</head>
+
+
+<body>
+
+	<h1>Formulario de registro CFGS DAW - IES DOÑANA</h1>
+	<form>
+		<br><br>
+		<label> Nombre:
+			<input type='text' id='name' name='name'>
+		</label>
+		<label> Fecha de nacimiento:
+			<input type='text' id='date' name='date'>
+		</label>
+		<br><br>
+		<label> Sexo:
+			<select id="gender" name='gender'>
+				<option value="f" data-class="avatar" data-style="background-image: url(images/female.png);">Mujer
+				</option>
+				<option value="m" data-class="avatar" data-style="background-image: url(images/male.png);">Hombre
+				</option>
+				<select>
+		</label>
+		<br><br>
+		<fieldset>
+			<legend>Últimos estudios realizados: </legend>
+			<label for="radio-1">ESO</label>
+			<input type="radio" name="radio-1" id="radio-1">
+			<label for="radio-2">Bachillerato</label>
+			<input type="radio" name="radio-1" id="radio-2">
+			<label for="radio-3">CF</label>
+			<input type="radio" name="radio-1" id="radio-3">
+			<label for="radio-4">Otros</label>
+			<input type="radio" name="radio-1" id="radio-4">
+		</fieldset>
+
+
+		<fieldset id="checkbox">
+			<legend>Modulos: </legend>
+			<label for="checkbox-1">Programación</label>
+			<input type="checkbox" name="checkbox-1" id="checkbox-1" value="prog">
+			<label for="checkbox-2">Entornos de desarrollo</label>
+			<input type="checkbox" name="checkbox-2" id="checkbox-2" value="ent">
+			<label for="checkbox-3">Lenguaje de Marcas</label>
+			<input type="checkbox" name="checkbox-3" id="checkbox-3" value="leng">
+			<label for="checkbox-4">Sistemas informáticos</label>
+			<input type="checkbox" name="checkbox-4" id="checkbox-4" value="sist">
+			<label for="checkbox-5">FOL</label>
+			<input type="checkbox" name="checkbox-5" id="checkbox-5" value="fol">
+		</fieldset>
+
+		<p>Módulos en los que se desea matricular</p>
+		<div class="ui-widget">
+			<div id="slider" name='amount'>
+				<div id="custom-handle" class="ui-slider-handle">
+					<p value="" id="vslider"></p>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="ui-widget">
+			<label for="tags">Lenguajes de programación que conoces
+				<input type='text' name='tags' id="tags" size="50">
+			</label>
+		</div>
+		   
+		<br><br>
+		<div>
+			<button type="reset" id="button">Enviar</button>
+			<button type="submit" class=".enviar" id="button2">Enviar</button>
+			<button id="button3">Imprimir</button>
+		</div>
+		<p id="mensaje">Se esta enviando la información al servidor...</p>
+		<p id="mensaje2" title="200 OK"></p>
+		<div id="progressbar"></div>
+
+	</form>
+</body>
+
+</html>

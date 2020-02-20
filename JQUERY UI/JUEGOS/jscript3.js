@@ -1,0 +1,4 @@
+$( '.draggable' ).draggable({
+    addClasses: false
+});
+
